@@ -15,9 +15,9 @@
   <name>movieengine</name>  
   <description>movieengine</description>  
   <properties> 
-    <java.version>1.8</java.version> 
-  </properties>  
-  <dependencies> 
+    <java.version>1.8</java.version>
+  </properties>
+  <dependencies>
     <dependency> 
       <groupId>org.springframework.boot</groupId>  
       <artifactId>spring-boot-starter</artifactId> 
@@ -34,7 +34,13 @@
     <dependency> 
       <groupId>org.springframework.boot</groupId>  
       <artifactId>spring-boot-starter-web</artifactId> 
-    </dependency> 
+    </dependency>
+
+    <dependency>
+      <groupId>com.azure.spring</groupId>
+      <artifactId>spring-cloud-azure-starter-data-cosmos</artifactId>
+      <version>4.0.0</version>
+    </dependency>
   </dependencies>  
   <build> 
     <plugins> 

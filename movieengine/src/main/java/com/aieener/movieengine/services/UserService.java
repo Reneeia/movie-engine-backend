@@ -6,27 +6,36 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class UserService {
     private final UserRepository repo;
+    private UserRepository repo1;
 
     public UserService(UserRepository repo) {
         this.repo = repo;
     }
 
-    public Mono<UserDocument> create(UserDocument user) {
+    public UserDocument create(UserDocument user) {
         return repo.save(user);
     }
 
-    public Flux<UserDocument> getAll() {
-        return repo.findAll();
+    public List<UserDocument> getAll() {
+        List<UserDocument> res = new ArrayList<>();
+        repo.findAll().forEach(res::add);
+        return res;
     }
 
-    public Mono<UserDocument> getById(String id) {
+    public Optional<UserDocument> getById(String id) {
         return repo.findById(id);
     }
 
-    public Flux<UserDocument> getByFirstName (String firstName) {
-        return repo.findByFirstName(firstName);
+    public Iterable<UserDocument> getByFirstName (String firstName) {
+        List<UserDocument> res = new ArrayList<>();
+        repo.findByFirstName(firstName).forEach(res::add);
+        return res;
     }
 }

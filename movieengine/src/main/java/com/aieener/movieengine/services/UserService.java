@@ -3,8 +3,6 @@ package com.aieener.movieengine.services;
 import com.aieener.movieengine.documents.UserDocument;
 import com.aieener.movieengine.repository.UserRepository;
 import org.springframework.stereotype.Service;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +11,6 @@ import java.util.Optional;
 @Service
 public class UserService {
     private final UserRepository repo;
-    private UserRepository repo1;
 
     public UserService(UserRepository repo) {
         this.repo = repo;

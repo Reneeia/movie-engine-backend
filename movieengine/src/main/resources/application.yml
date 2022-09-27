@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    azure:
+      cosmos:
+        endpoint: https://movie-engine-db.documents.azure.com:443/
+        key: Hyt7RrXfCZYZHsiHT0bS9rOqEetlFiso7skXkV2J9yyUDrDCuw1jPwbNi6IPZJjr7eGOxLtfGEJfJBuorMU6LQ==
+        database: MovieEngineDb
+        populate-query-metrics: true
+  datasource:
+    url: jdbc:sqlserver://movie-engine.database.windows.net:1433;database=movie-engine-db;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;Authentication=ActiveDirectoryMSI;
+#    url: jdbc:sqlserver://movie-engine.database.windows.net:1433;database=movie-engine-db;user=movie-engine-admin@movie-engine;password=@Dajiangtang721@;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+# Specify base api path
+server:
+  servlet:
+    context-path: /api
